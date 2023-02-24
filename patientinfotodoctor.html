@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>patient info doctor</title>
+    <link rel="stylesheet" href="css/two.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+    <!------------------- start navigation bar ----------------------->
+
+    <div class="nav">
+        <div class="nav-row">
+            <div class="nav-col left">
+                <i class="fas fa-virus"></i>
+                <h2>covid-<span>19</span></h2>
+            </div>
+            <div class="nav-col right" id="sideNav">
+                <nav>
+                    <ul>
+                        <li><a href="two.html">home</a></li>
+                        <li><a href="#">log out</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="nav-btn" id="menuBtn"><img src="images/menu.png" id="menu"></div>
+    </div>
+    <div class="patient-info">
+        <div class="row">
+            <div class="col left">
+                <h2>patient's personal info</h2>
+                <div class="info">
+                    <p>Patient name</p>
+                    <h4>mohab alaa</h4>
+                </div>
+                <div class="info">
+                    <p>Patient ID</p>
+                    <h4>236243724</h4>
+                </div>
+                <div class="info">
+                    <p>Patient Room Number</p>
+                    <h4>32</h4>
+                </div>
+                <div class="info">
+                    <p>Patient Bed Number</p>
+                    <h4>9</h4>
+                </div>
+                <div class="info">
+                    <p>Supervisor Doctor Name</p>
+                    <h4>mohab alaa</h4>
+                </div>
+                <div class="info">
+                    <p>Doctor Number</p>
+                    <h4>45</h4>
+                </div>
+            </div>
+            <div class="col mid">
+                <h2>Real Time Health Parameter Measurements</h2>
+                <div class="info">
+                    <p><i class="fas fa-thermometer-three-quarters"></i>Tempearature of patient</p>
+                    <h4>mohab alaa</h4>
+                </div>
+                <div class="info">
+                    <p><i class="fas fa-syringe"></i>Cough Rate of Patient</p>
+                    <h4>236243724</h4>
+                </div>
+                <div class="info">
+                    <p><i class="fas fa-burn"></i>Blood Pressure of Patient</p>
+                    <h4>32</h4>
+                </div>
+                <div class="info">
+                    <p><i class="far fa-heart"></i>Heart Rate of Patient</p>
+                    <h4>9</h4>
+                </div>
+                <div class="info">
+                    <p><i class="fas fa-percentage"></i>Respiratory Rate</p>
+                    <h4>70%</h4>
+                </div>
+            </div>
+            <div class="col right">
+                <h2>Premiited Health Parameter</h2>
+                <div class="info">
+                    <p><i class="fas fa-thermometer-three-quarters"></i>Tempearature</p>
+                    <h4>37</h4>
+                </div>
+                <div class="info">
+                    <p><i class="fas fa-syringe"></i>Cougph Rate</p>
+                    <h4>50% - 90%</h4>
+                </div>
+                <div class="info">
+                    <p><i class="fas fa-burn"></i>Blood Pressure</p>
+                    <h4>120/80</h4>
+                </div>
+                <div class="info">
+                    <p><i class="far fa-heart"></i>RT Heart Rate</p>
+                    <h4>60-120</h4>
+                </div>
+                <div class="info">
+                    <p><i class="fas fa-percentage"></i>Respiratory Rate</p>
+                    <h4>70%</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="doc-desc">
+        
+        <div class="chat">
+            <div class="col">
+                <p class="left">hello</p>
+                <p class="left">how are you</p>
+                <p class="left">please follow my advices</p>
+            </div>
+            <div class="col">
+                <p class="right">hello, doctor</p>
+                <p class="right">not bad</p>
+                <p class="right">thanks, doctor</p>
+            </div>
+        </div>
+        <h2>doctor's advice</h2>
+        <textarea>notices and advices...........</textarea>
+        <button class="docbtn">send</button>
+        <textarea>patient question</textarea>
+    </div>
+
+
+        <script>
+            var sideNav = document.getElementById("sideNav");
+            var menuBtn = document.getElementById("menuBtn");
+            var menu = document.getElementById("menu");
+    
+    
+            menuBtn.onclick = function ()  {
+            if (sideNav.style.display == "none") {
+            sideNav.style.display = "block";
+           menu.src = "images/close.png";
+        }
+            else{
+                sideNav.style.display = "none";
+                menu.src = "images/menu.png";
+            }
+            }
+        </script>
+    </div>
+</body>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>patient info</title>
+    <link rel="stylesheet" href="css/two.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+    <!------------------- start navigation bar ----------------------->
+
+    <div class="nav">
+        <div class="nav-row">
+            <div class="nav-col left">
+                <i class="fas fa-virus"></i>
+                <h2>covid-<span>19</span></h2>
+            </div>
+            <div class="nav-col right" id="sideNav">
+                <nav>
+                    <ul>
+                        <li><a href="two.html">home</a></li>
+                        <li><a href="#">log out</a></li>
+                        <li><a href="#">log out</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="nav-btn" id="menuBtn"><img src="images/menu.png" id="menu"></div>
+    </div>
+    <div class="patient-info">
+        <div class="row">
+            <div class="col left">
+                <h2>patient's personal info</h2>
+                <div class="info">
+                    <p>Patient name</p>
+                    <h4 id="name">mohab alaa</h4>
+                </div>
+                <div class="info">
+                    <p >Patient ID</p>
+                    <h4 id="id">236243724</h4>
+                </div>
+                <div class="info">
+                    <p>Patient Room Number</p>
+                    <h4 id="RoomNumber">32</h4>
+                </div>
+                <div class="info">
+                    <p>Patient Bed Number</p>
+                    <h4 id="BedNumber">9</h4>
+                </div>
+                <div class="info">
+                    <p>Supervisor Doctor Name</p>
+                    <h4 id="SupervisorDoctorName">mohab alaa</h4>
+                </div>
+                <div class="info">
+                    <p >Doctor Number</p>
+                    <h4 id="doctorNumber">45</h4>
+                </div>
+            </div>
+            <div class="col mid">
+                <h2>Real Time Health Parameter Measurements</h2>
+                <div class="info">
+                    <p><i class="fas fa-thermometer-three-quarters"></i>Tempearature of patient</p>
+                    <h4 id="Tempearature">mohab alaa</h4>
+                </div>
+                <div class="info">
+                    <p><i class="fas fa-syringe"></i>Cough Rate of Patient</p>
+                    <h4 id="CoughRate">236243724</h4>
+                </div>
+                <div class="info">
+                    <p><i class="fas fa-burn"></i>Blood Pressure of Patient</p>
+                    <h4 id="BloodPressure">32</h4>
+                </div>
+                <div class="info">
+                    <p><i class="far fa-heart"></i>Heart Rate of Patient</p>
+                    <h4 id="HeartRate">9</h4>
+                </div>
+                <div class="info">
+                    <p><i class="fas fa-percentage"></i>Respiratory Rate</p>
+                    <h4 id="RespiratoryRate">70%</h4>
+                </div>
+            </div>
+            <div class="col right">
+                <h2>Premiited Health Parameter</h2>
+                <div class="info">
+                    <p><i class="fas fa-thermometer-three-quarters"></i>Tempearature</p>
+                    <h4>37</h4>
+                </div>
+                <div class="info">
+                    <p><i class="fas fa-syringe"></i>Cougph Rate</p>
+                    <h4>70-90%</h4>
+                </div>
+                <div class="info">
+                    <p><i class="fas fa-burn"></i>Blood Pressure</p>
+                    <h4>120/80</h4>
+                </div>
+                <div class="info">
+                    <p><i class="far fa-heart"></i>RT Heart Rate</p>
+                    <h4>60-120</h4>
+                </div>
+                <div class="info">
+                    <p><i class="fas fa-percentage"></i>Respiratory Rate</p>
+                    <h4>70%</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="doc-desc">
+        <h2>doctor's advice</h2>
+        <p> Self-isolate at home. As advised by the Centers for Disease Control and Prevention (CDC), we ask you to stay in your home and limit contact with others to avoid spreading this virus. Clean and disinfect. Clean all “high-touch” surfaces every day. Help stop the spread. Clean your hands often. Notify your     close contacts
+        </p>
+        <div class="chat">
+            <div class="col" id="Left">
+            </div>
+            <div class="col" id="Right">
+            </div>
+        </div>
+        <h2>contact us</h2>
+        <textarea id="Question">send your question...</textarea>
+        <button class="docbtn" onclick="sendQuestion()">send</button>
+    </div>
+
+
+        <script>
+            var sideNav = document.getElementById("sideNav");
+            var menuBtn = document.getElementById("menuBtn");
+            var menu = document.getElementById("menu");
+    
+    
+            menuBtn.onclick = function ()  {
+            if (sideNav.style.display == "none") {
+            sideNav.style.display = "block";
+           menu.src = "images/close.png";
+        }
+            else{
+                sideNav.style.display = "none";
+                menu.src = "images/menu.png";
+            }
+            }
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+        
+        <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+            apiKey: "AIzaSyAVjVAtas7nYy3UHNw_xYA4tGZFQ_GP5yo",
+            authDomain: "healthmonitoringsystem-237dc.firebaseapp.com",
+            databaseURL: "https://healthmonitoringsystem-237dc-default-rtdb.firebaseio.com",
+            projectId: "healthmonitoringsystem-237dc",
+            storageBucket: "healthmonitoringsystem-237dc.appspot.com",
+            messagingSenderId: "827651762567",
+            appId: "1:827651762567:web:aa067be5dd63c5a4414b22",
+            measurementId: "G-9J94LLC51B"
+        };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+        </script>
+        
+        <script src="js/patientinfo.js"></script>
+        
+    </div>
+</body>

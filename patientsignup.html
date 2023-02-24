@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>patient sign up</title>
+    <link rel="stylesheet" href="css/two.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+    <!------------------- start navigation bar ----------------------->
+
+    <div class="nav">
+        <div class="nav-row">
+            <div class="nav-col left">
+                <i class="fas fa-virus"></i>
+                <h2>covid-<span>19</span></h2>
+            </div>
+            <div class="nav-col right" id="sideNav">
+                <nav>
+                    <ul>
+                        <li><a href="two.html">home</a></li>
+                        <li><a href="two.html #login">log in</a></li>
+                        <li><a href="signup.html">sign up</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="nav-btn" id="menuBtn"><img src="images/menu.png" id="menu"></div>
+    </div>
+    <div class="doctor">
+        <div class="row">
+            <form>
+                <h2>patient sign up</h2>
+                <h3>cearte your account</h3>
+                <div class="box">
+                    <input type="text" id="Fname" placeholder="first name">
+                </div>
+                <div class="box">
+                    <input type="text" id="Lname" placeholder="last name">
+                </div>
+                <div class="box">
+                    <input type="text" id="SSN" placeholder="National ID">
+                </div>
+                <div class="box">
+                    <input type="text" id="Phone" placeholder="Phone">
+                </div>
+                <div class="box">
+                    <input type="text" id="Address" placeholder="Address">
+                </div>
+                <div class="box">
+                    <input type="text" id="Age" placeholder="Age">
+                </div>
+                <div class="box">
+                    <input type="email" id="Email" placeholder="email adress">
+                </div>
+                <dev class="box">
+                    <label for="doctor">Choose your doctor:</label>
+                    <select name="doctor" id="doctor">
+                    </select>
+                </dev>
+                <div class="box">
+                    <input type="password" id="Password" placeholder="password">
+                </div>
+                <p>By clicking Sign Up, you agree to our <span>Terms of Use</span> and our <span>Privacy Policy</span>.
+                </p>
+                <button class="btn" id="AddPatientButton" type="button">sign up</button>
+            </form>
+        </div>
+    </div>
+        <script>
+            var sideNav = document.getElementById("sideNav");
+            var menuBtn = document.getElementById("menuBtn");
+            var menu = document.getElementById("menu");
+    
+    
+            menuBtn.onclick = function ()  {
+            if (sideNav.style.display == "none") {
+            sideNav.style.display = "block";
+           menu.src = "images/close.png";
+        }
+            else{
+                sideNav.style.display = "none";
+                menu.src = "images/menu.png";
+            }
+            }
+        </script>
+                  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase.js"></script>
+                  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+                  
+                  <script>
+                      // Your web app's Firebase configuration
+                      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                      var firebaseConfig = {
+                      apiKey: "AIzaSyAVjVAtas7nYy3UHNw_xYA4tGZFQ_GP5yo",
+                      authDomain: "healthmonitoringsystem-237dc.firebaseapp.com",
+                      databaseURL: "https://healthmonitoringsystem-237dc-default-rtdb.firebaseio.com",
+                      projectId: "healthmonitoringsystem-237dc",
+                      storageBucket: "healthmonitoringsystem-237dc.appspot.com",
+                      messagingSenderId: "827651762567",
+                      appId: "1:827651762567:web:aa067be5dd63c5a4414b22",
+                      measurementId: "G-9J94LLC51B"
+                  };
+                      // Initialize Firebase
+                      firebase.initializeApp(firebaseConfig);
+                      firebase.analytics();
+                  </script>
+                  
+                  <script src="js/Patient.js"></script>
+    </div>
+</body>
